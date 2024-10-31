@@ -1,7 +1,5 @@
 package br.edu.catolica.config;
 
-import br.edu.catolica.config.DBException;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.*;

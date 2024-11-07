@@ -2,7 +2,11 @@ package br.edu.catolica.models;
 
 import java.util.Date;
 
-//matheus: modelo que representa o cliente
+/**
+* Classe que representa um cliente
+* @author Maria Fernanda
+ * @version 1.0
+*/
 public class Cliente {
     // atributos do cliente
     private int cliente_ID;
@@ -11,7 +15,9 @@ public class Cliente {
     private String telefone;
     private Date data_cadastro;
 
-    // construtor do objeto
+    /**
+     * Construtor da classe
+     * */
     public Cliente() {}
 
     // getters e setters

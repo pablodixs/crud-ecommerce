@@ -9,12 +9,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Classe de serviço do cliente que implementa o ClienteDAO
+ *
+ * @author Matheus, Pablo e Maria Fernanda
+ * @version 1.0
+ */
 public class ClienteService implements ClienteDAO {
-
-    // matheus: método para cadastrar um cliente novo
+    /**
+     * Método para cadastrar um cliente novo
+     * @throws SQLException se houver algum erro durante a consulta ao banco de dados
+     */
     @Override
     public void cadastrarCliente() {
-        // matheus: istancia uma variavel de conexao com o banco de dados
         Connection conexao;
         PreparedStatement statement;
 
@@ -34,7 +41,7 @@ public class ClienteService implements ClienteDAO {
         novoCliente.setData_cadastro(new java.util.Date());
 
         try {
-            // matheus: conecta ao banco de dados
+            /* conecta ao banco de dados */
             conexao = DB.conectar();
             conexao.createStatement();
 
@@ -59,6 +66,12 @@ public class ClienteService implements ClienteDAO {
     }
 
     // Maria: metodo para consultar cliente
+    /**
+     * Método para consultar um cliente
+     * @param id o id do cliente
+     * @return um cliente com o mesmo id dos parametros
+     * @throws SQLException se houver algum erro na busca
+     * */
     @Override
     public Cliente consultarCliente(int id) {
         Connection conexao;
@@ -100,7 +113,11 @@ public class ClienteService implements ClienteDAO {
         return null;
     }
 
-    // (Pablo) => Método para listar todos os clientes
+    /**
+     * Método para listar todos os clientes
+     * @return uma lista de clientes
+     * @throws SQLException se houver algum erro de consulta
+     * */
     @Override
     public List<Cliente> listarClientes() {
         Connection conexao;
@@ -149,7 +166,10 @@ public class ClienteService implements ClienteDAO {
         return clientes;
     }
 
-    // (Pablo) => Método para atualizar os dados do cliente
+    /**
+     * Método para atualizar um cliente
+     * @throws SQLException se houver algum erro na consulta ou atualização
+     * */
     @Override
     public void atualizarCliente() {
         Connection conexao;
@@ -195,8 +215,11 @@ public class ClienteService implements ClienteDAO {
         }
     }
 
-    // Maria: método para excluir cliente
-    // Recebe por parametro o id do cliente a ser excluido
+    /**
+     * Método para excluir um cliente
+     * @param id id do cliente a ser excluído
+     * @throws SQLException se houver algum erro na consulta ou exclusão
+     * */
     @Override
     public void excluirCliente(int id) {
         Connection conexao;

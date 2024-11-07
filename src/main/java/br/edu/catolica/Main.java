@@ -4,6 +4,12 @@ import br.edu.catolica.services.ClienteService;
 
 import java.util.Scanner;
 
+/**
+ * Método principal do programa
+ *
+ * @author Pablo, Matheus e Maria Fernanda
+ * @version 1.0
+ * */
 public class Main {
     public static void main(String[] args) {
         // Pablo => Instancia o clienteService
